@@ -1,37 +1,193 @@
-<!DOCTYPE html> <html lang="en"> <head> <meta charset="UTF-8" /> <meta name="viewport" content="width=device-width, initial-scale=1" /> <title>My First Website</title> <style> :root { --bg: #0f172a; --card: #111827; --text: #e5e7eb; --muted: #9ca3af; --accent: #22d3ee; } * { box-sizing: border-box; } body { margin: 0; font-family: system-ui, -apple-system, Segoe UI, Roboto, "Helvetica Neue", Arial, sans-serif; background: linear-gradient(180deg, #0b1020, var(--bg)); color: var(--text); } header { padding: 56px 20px 24px; text-align: center; } nav { display: flex; justify-content: center; gap: 14px; flex-wrap: wrap; margin-top: 10px; } nav a { color: var(--text); text-decoration: none; padding: 8px 14px; border: 1px solid #1f2937; border-radius: 999px; background: #0b1220; transition: all 0.2s ease; font-size: 14px; } nav a:hover { border-color: var(--accent); color: var(--accent); } .container { max-width: 960px; margin: 0 auto; padding: 20px; } .card { background: linear-gradient(180deg, #0c1324, var(--card)); border: 1px solid #1f2937; border-radius: 16px; padding: 24px; margin: 16px 0; box-shadow: 0 10px 30px rgba(0,0,0,0.25); } .hero { padding: 36px 24px; text-align: center; } h1 { font-size: 2.2rem; margin: 0 0 8px; } p.lead { color: var(--muted); font-size: 1.05rem; margin: 0 auto; max-width: 720px; } .grid { display: grid; grid-template-columns: repeat( auto-fit, minmax(260px, 1fr) ); gap: 16px; margin-top: 16px; } .btn { display: inline-block; background: var(--accent); color: #0b1020; padding: 10px 16px; border-radius: 10px; text-decoration: none; font-weight: 600; box-shadow: 0 8px 20px rgba(34,211,238,0.25); transition: transform 0.2s ease; } .btn:hover { transform: translateY(-2px); } footer { text-align: center; color: var(--muted); padding: 28px 20px 40px; } /* Responsive tweaks */ @media (max-width: 480px) { h1 { font-size: 1.8rem; } } </style> </head> <body> <header> <div class="container"> <div class="hero card"> <h1>Hey, I’m Gaya</h1> <p class="lead">This is my first website. I build games, design bold visuals, and love dramatic, anime-inspired aesthetics.</p> <nav> <a href="#about">About</a> <a href="#projects">Projects</a> <a href="#contact">Contact</a> </nav> </div> </div> </header>
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Pokestars — Game Studio</title>
+  <meta name="description" content="Pokestars — cinematic, lightning-themed game studio. Bold visuals and dramatic gameplay." />
+  <style>
+    :root {
+      --bg-1: #05060a;
+      --bg-2: #071026;
+      --card: #0b1220;
+      --text: #e6eef8;
+      --muted: #9aa7b8;
+      --accent: #ffd166;
+      --accent-2: #22d3ee;
+      --glass: rgba(255,255,255,0.03);
+    }
+    * { box-sizing: border-box; }
+    body { margin: 0; font-family: system-ui, -apple-system, 'Segoe UI', Roboto, 'Helvetica Neue', Arial, sans-serif; background: radial-gradient(1200px 600px at 10% 10%, rgba(34,211,238,0.03), transparent 8%), linear-gradient(180deg,var(--bg-1), var(--bg-2)); color: var(--text); -webkit-font-smoothing:antialiased; }
+    header { padding: 36px 20px 16px; }
+    nav { display: flex; justify-content: center; gap: 12px; flex-wrap: wrap; margin-top: 8px; }
+    nav a { color: var(--text); text-decoration: none; padding: 8px 14px; border: 1px solid rgba(255,255,255,0.04); border-radius: 999px; background: var(--glass); transition: all 0.18s ease; font-size: 14px; }
+    nav a:hover { border-color: var(--accent); color: var(--accent); }
+    .container { max-width: 1100px; margin: 0 auto; padding: 20px; }
+    .card { background: linear-gradient(180deg, rgba(255,255,255,0.01), rgba(255,255,255,0.00)); border: 1px solid rgba(255,255,255,0.04); border-radius: 12px; padding: 18px; margin: 16px 0; }
 
-<main class="container"> <section id="about" class="card"> <h2>About me</h2> <p>I’m a creative developer and designer. I enjoy blending cultural and mythological references into original games and visual identities.</p> <p><strong>Focus:</strong> Game dev, branding, and cinematic visuals.</p> </section>
+    /* Lightning hero */
+    .hero-wrap { position: relative; overflow: hidden; border-radius: 14px; background: linear-gradient(180deg, rgba(10,16,30,0.6), rgba(3,6,12,0.6)); padding: 36px 18px; display:flex; align-items:center; justify-content:center; }
+    .hero-stage { position: relative; width: 100%; max-width: 1080px; height: 420px; display:flex; align-items:center; justify-content:center; }
+    .hero-stage::before, .hero-stage::after{ content:''; position:absolute; inset:0; pointer-events:none; mix-blend-mode:screen; opacity:0.18; }
+    .hero-stage::before { background: radial-gradient(circle at 20% 15%, rgba(34,211,238,0.06), transparent 12%), radial-gradient(circle at 80% 85%, rgba(255,209,102,0.06), transparent 12%); }
+    .hero-stage::after { background: url('data:image/svg+xml;utf8,<svg xmlns="http://www.w3.org/2000/svg" width="1200" height="600"><defs><filter id="g"><feTurbulence baseFrequency="0.9" numOctaves="2" seed="3"/></filter></defs></svg>') repeat; animation: sky-pulse 6s ease-in-out infinite; }
+    @keyframes sky-pulse { 0%{opacity:0.06} 50%{opacity:0.18} 100%{opacity:0.06} }
 
-<section id="projects" class="card">
-  <h2>Projects</h2>
-  <div class="grid">
-    <article class="card">
-      <h3>Rinne Clan Identity</h3>
-      <p>Short, punchy naming, electric themes, and high-impact logo design.</p>
-      <a class="btn" href="#" aria-disabled="true">Preview soon</a>
-    </article>
-    <article class="card">
-      <h3>Original Game: Bolt</h3>
-      <p>Dramatic, anime-inspired combat with stylish UI and bold branding.</p>
-      <a class="btn" href="#" aria-disabled="true">Demo soon</a>
-    </article>
-    <article class="card">
-      <h3>Poster Series</h3>
-      <p>Cinematic layouts highlighting achievements and persona.</p>
-      <a class="btn" href="#" aria-disabled="true">Gallery soon</a>
-    </article>
-  </div>
-</section>
+    /* lightning bolt elements */
+    .bolt { position:absolute; width: 2px; height: 100px; left:50%; top:10%; transform-origin: top center; opacity:0; filter: drop-shadow(0 12px 18px rgba(255,210,120,0.18)); }
+    .bolt svg { width: 220px; height: 220px; transform: translateX(-50%); }
+    .bolt.flash { animation: flash 3.2s linear infinite; }
+    .bolt.flash:nth-child(1){ left:22%; animation-delay:0.1s }
+    .bolt.flash:nth-child(2){ left:78%; animation-delay:0.9s }
+    .bolt.flash:nth-child(3){ left:50%; animation-delay:2.1s }
+    @keyframes flash{
+      0% { opacity:0; transform: translateY(-10%) scaleY(0.9) }
+      6% { opacity:1; transform: translateY(0) scaleY(1.02) }
+      12% { opacity:0.9 }
+      25% { opacity:0; transform:translateY(-4%) }
+      100% { opacity:0 }
+    }
 
-<section id="contact" class="card">
-  <h2>Contact</h2>
-  <p><strong>Email:</strong> yourname@example.com</p>
-  <p><strong>Socials:</strong> Add your links here.</p>
-  <a class="btn" href="mailto:yourname@example.com">Say hello</a>
-</section>
+    /* fighters/illustrations */
+    .fighter { position:absolute; bottom:8%; width:260px; max-width:30%; transform-origin:center bottom; z-index:6; transition:transform .28s ease; }
+    .fighter.left{ left:6%; }
+    .fighter.right{ right:6%; transform:scaleX(-1); }
 
-</main>
+    /* central copy */
+    .hero-copy { position:relative; z-index:8; text-align:center; color:var(--text); padding:12px; backdrop-filter: blur(4px); }
+    .hero-copy h1{ margin:0; font-size:3rem; letter-spacing:1px; text-shadow: 0 10px 30px rgba(0,0,0,0.6); color:var(--text); }
+    .hero-copy p.lead{ color:var(--muted); max-width:760px; margin:10px auto 0; font-size:1.05rem; }
+    .hero-ctas{ margin-top:14px; display:flex; gap:12px; justify-content:center; }
+    .btn{ display:inline-block; background:linear-gradient(90deg,var(--accent), var(--accent-2)); color:#061018; padding:10px 16px; border-radius:10px; font-weight:700; text-decoration:none; box-shadow:0 12px 40px rgba(255,210,110,0.08); }
+    .btn.ghost{ background:transparent; color:var(--text); border:1px solid rgba(255,255,255,0.06); box-shadow:none }
 
-<footer> <small>© <span id="year"></span> Gaya. All rights reserved.</small> </footer>
+    /* projects grid */
+    .grid { display:grid; grid-template-columns: repeat(auto-fit, minmax(260px, 1fr)); gap:16px; margin-top:16px; }
 
-<script> // Set current year in the footer document.getElementById('year').textContent = new Date().getFullYear(); </script> </body> </html>
+    footer{ text-align:center; color:var(--muted); padding:28px 20px 40px; }
+
+    /* responsive */
+    @media (max-width:900px){ .hero-stage{ height:360px } .hero-copy h1{ font-size:2.2rem } }
+    @media (max-width:520px){ .fighter{ width:140px } .hero-stage{ height:300px } .hero-copy p.lead{ font-size:0.95rem } }
+  </style>
+</head>
+<body>
+  <header class="container">
+    <div class="card" style="text-align:center; padding:14px 18px;">
+      <h2 style="margin:0;">Pokestars</h2>
+      <nav aria-label="Main navigation">
+        <a href="#about">About</a>
+        <a href="#projects">Projects</a>
+        <a href="#contact">Contact</a>
+      </nav>
+    </div>
+  </header>
+
+  <main class="container">
+    <!-- Lightning hero -->
+    <section class="hero-wrap card" aria-label="Pokestars lightning hero">
+      <div class="hero-stage" role="img" aria-label="Lightning battle scene with Pokestars logo and CTA">
+
+        <!-- Lightning bolts (SVG inline for crisp lines) -->
+        <div class="bolt flash" aria-hidden="true">
+          <svg viewBox="0 0 100 140" xmlns="http://www.w3.org/2000/svg" preserveAspectRatio="xMidYMid meet">
+            <defs>
+              <linearGradient id="g1" x1="0" x2="1">
+                <stop offset="0%" stop-color="#fff1b8" />
+                <stop offset="100%" stop-color="#ffd166" />
+              </linearGradient>
+              <filter id="glow"><feGaussianBlur stdDeviation="6" result="b"/></filter>
+            </defs>
+            <path d="M30 0 L50 40 L38 44 L62 100 L42 92 L56 140 L22 74 L34 60 L30 0" fill="url(#g1)" filter="url(#glow)" />
+          </svg>
+        </div>
+
+        <div class="bolt flash" aria-hidden="true">
+          <svg viewBox="0 0 100 140" xmlns="http://www.w3.org/2000/svg" preserveAspectRatio="xMidYMid meet">
+            <path d="M30 0 L50 40 L38 44 L62 100 L42 92 L56 140 L22 74 L34 60 L30 0" fill="#d9eeff" opacity="0.9" />
+          </svg>
+        </div>
+
+        <div class="bolt flash" aria-hidden="true">
+          <svg viewBox="0 0 100 140" xmlns="http://www.w3.org/2000/svg" preserveAspectRatio="xMidYMid meet">
+            <path d="M30 0 L50 40 L38 44 L62 100 L42 92 L56 140 L22 74 L34 60 L30 0" fill="#fff7cc" opacity="0.8" />
+          </svg>
+        </div>
+
+        <!-- fighters (placeholders you can replace later) -->
+        <img class="fighter left" src="/assets/hero-left.png" alt="Left hero illustration" />
+        <img class="fighter right" src="/assets/hero-right.png" alt="Right hero illustration" />
+
+        <!-- center copy and CTAs -->
+        <div class="hero-copy" role="region" aria-label="Welcome copy">
+          <h1>Pokestars</h1>
+          <p class="lead">Striking lightning-driven battles and cinematic game experiences. Join the arena — bold visuals, electrifying gameplay.</p>
+          <div class="hero-ctas">
+            <a class="btn" href="#projects">Explore Projects</a>
+            <a class="btn ghost" href="#contact">Contact Us</a>
+          </div>
+        </div>
+
+      </div>
+    </section>
+
+    <section id="about" class="card">
+      <h2>About</h2>
+      <p>Pokestars is a game studio that blends cinematic visuals, myth-inspired storytelling, and high-impact gameplay. We design characters, systems, and visuals with a dramatic, anime-inspired flair.</p>
+      <p><strong>Focus:</strong> Game dev, branding, cinematic UI/UX.</p>
+    </section>
+
+    <section id="projects" class="card">
+      <h2>Projects</h2>
+      <div class="grid">
+        <article class="card">
+          <h3>Rinne Clan Identity</h3>
+          <p>Short, punchy naming, electric themes, and high-impact logo design.</p>
+          <a class="btn" href="#" aria-disabled="true">Preview soon</a>
+        </article>
+        <article class="card">
+          <h3>Original Game: Bolt</h3>
+          <p>Dramatic, lightning-inspired combat with stylish UI and bold branding.</p>
+          <a class="btn" href="#" aria-disabled="true">Demo soon</a>
+        </article>
+        <article class="card">
+          <h3>Poster Series</h3>
+          <p>Cinematic layouts highlighting achievements and persona.</p>
+          <a class="btn" href="#" aria-disabled="true">Gallery soon</a>
+        </article>
+      </div>
+    </section>
+
+    <section id="contact" class="card">
+      <h2>Contact</h2>
+      <p><strong>General & inquiries:</strong> <a href="mailto:contact@pokestars.games">contact@pokestars.games</a></p>
+      <p><strong>Support:</strong> <a href="mailto:support@pokestars.games">support@pokestars.games</a></p>
+      <a class="btn" href="mailto:contact@pokestars.games">Send a message</a>
+
+      <p style="margin-top:10px; color:#9ca3af; font-size:0.9rem;">Expected response time: within 48 hours. For urgent support, please use the support address above.</p>
+    </section>
+
+  </main>
+
+  <footer>
+    <div class="container">
+      <small>© <span id="year"></span> Pokestars. All rights reserved.</small>
+      <div style="margin-top:8px; color: #9aa7b8; font-size:0.85rem;">Fan demo notice: If you are using any trademarked characters in this demo, replace them before public release.</div>
+    </div>
+  </footer>
+
+  <script>
+    // set current year
+    document.getElementById('year').textContent = new Date().getFullYear();
+
+    // subtle bolt timing randomness for nicer feel
+    (function randomizeBolts(){
+      const bolts = document.querySelectorAll('.bolt.flash');
+      bolts.forEach((b,i)=>{
+        const delay = Math.random()*2.6;
+        b.style.animationDelay = delay + 's';
+      });
+    })();
+  </script>
+</body>
+</html>
