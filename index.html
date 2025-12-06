@@ -1,0 +1,37 @@
+<!DOCTYPE html> <html lang="en"> <head> <meta charset="UTF-8" /> <meta name="viewport" content="width=device-width, initial-scale=1" /> <title>My First Website</title> <style> :root { --bg: #0f172a; --card: #111827; --text: #e5e7eb; --muted: #9ca3af; --accent: #22d3ee; } * { box-sizing: border-box; } body { margin: 0; font-family: system-ui, -apple-system, Segoe UI, Roboto, "Helvetica Neue", Arial, sans-serif; background: linear-gradient(180deg, #0b1020, var(--bg)); color: var(--text); } header { padding: 56px 20px 24px; text-align: center; } nav { display: flex; justify-content: center; gap: 14px; flex-wrap: wrap; margin-top: 10px; } nav a { color: var(--text); text-decoration: none; padding: 8px 14px; border: 1px solid #1f2937; border-radius: 999px; background: #0b1220; transition: all 0.2s ease; font-size: 14px; } nav a:hover { border-color: var(--accent); color: var(--accent); } .container { max-width: 960px; margin: 0 auto; padding: 20px; } .card { background: linear-gradient(180deg, #0c1324, var(--card)); border: 1px solid #1f2937; border-radius: 16px; padding: 24px; margin: 16px 0; box-shadow: 0 10px 30px rgba(0,0,0,0.25); } .hero { padding: 36px 24px; text-align: center; } h1 { font-size: 2.2rem; margin: 0 0 8px; } p.lead { color: var(--muted); font-size: 1.05rem; margin: 0 auto; max-width: 720px; } .grid { display: grid; grid-template-columns: repeat( auto-fit, minmax(260px, 1fr) ); gap: 16px; margin-top: 16px; } .btn { display: inline-block; background: var(--accent); color: #0b1020; padding: 10px 16px; border-radius: 10px; text-decoration: none; font-weight: 600; box-shadow: 0 8px 20px rgba(34,211,238,0.25); transition: transform 0.2s ease; } .btn:hover { transform: translateY(-2px); } footer { text-align: center; color: var(--muted); padding: 28px 20px 40px; } /* Responsive tweaks */ @media (max-width: 480px) { h1 { font-size: 1.8rem; } } </style> </head> <body> <header> <div class="container"> <div class="hero card"> <h1>Hey, I’m Gaya</h1> <p class="lead">This is my first website. I build games, design bold visuals, and love dramatic, anime-inspired aesthetics.</p> <nav> <a href="#about">About</a> <a href="#projects">Projects</a> <a href="#contact">Contact</a> </nav> </div> </div> </header>
+
+<main class="container"> <section id="about" class="card"> <h2>About me</h2> <p>I’m a creative developer and designer. I enjoy blending cultural and mythological references into original games and visual identities.</p> <p><strong>Focus:</strong> Game dev, branding, and cinematic visuals.</p> </section>
+
+<section id="projects" class="card">
+  <h2>Projects</h2>
+  <div class="grid">
+    <article class="card">
+      <h3>Rinne Clan Identity</h3>
+      <p>Short, punchy naming, electric themes, and high-impact logo design.</p>
+      <a class="btn" href="#" aria-disabled="true">Preview soon</a>
+    </article>
+    <article class="card">
+      <h3>Original Game: Bolt</h3>
+      <p>Dramatic, anime-inspired combat with stylish UI and bold branding.</p>
+      <a class="btn" href="#" aria-disabled="true">Demo soon</a>
+    </article>
+    <article class="card">
+      <h3>Poster Series</h3>
+      <p>Cinematic layouts highlighting achievements and persona.</p>
+      <a class="btn" href="#" aria-disabled="true">Gallery soon</a>
+    </article>
+  </div>
+</section>
+
+<section id="contact" class="card">
+  <h2>Contact</h2>
+  <p><strong>Email:</strong> yourname@example.com</p>
+  <p><strong>Socials:</strong> Add your links here.</p>
+  <a class="btn" href="mailto:yourname@example.com">Say hello</a>
+</section>
+
+</main>
+
+<footer> <small>© <span id="year"></span> Gaya. All rights reserved.</small> </footer>
+
+<script> // Set current year in the footer document.getElementById('year').textContent = new Date().getFullYear(); </script> </body> </html>
